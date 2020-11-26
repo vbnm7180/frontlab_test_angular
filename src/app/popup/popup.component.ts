@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-popup',
-  template: `
-    <p>
-      popup works!
-    </p>
-  `,
+  templateUrl: './popup.component.html',
   styleUrls: ['./popup.component.css']
 })
 export class PopupComponent implements OnInit {
