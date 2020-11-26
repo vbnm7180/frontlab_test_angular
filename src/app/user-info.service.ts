@@ -9,7 +9,7 @@ export class UserInfoService {
   constructor(private http: HttpClient) { }
 
   getData(){
-    return this.http.get('http://api.randomuser.me/1.0/?results=50&nat=gb,us&inc=gender,name,location,email,phone,picture',{observe: 'body', responseType: 'json'});
+    return this.http.get('https://api.randomuser.me/1.0/?results=50&nat=gb,us&inc=gender,name,location,email,phone,picture',{observe: 'body', responseType: 'json'});
   }
 
 }
