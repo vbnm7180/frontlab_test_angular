@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserInfoService } from '../user-info.service';
+import { PopupComponent } from '../popup/popup.component'
+
 
 @Component({
   selector: 'app-list',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  users:any;
+
+  constructor(private uiserv: UserInfoService) { }
+    
+  processData() {
+      this.uiserv.getData().subscribe((data:any)=>{this.users=data});
+    }
 
   ngOnInit(): void {
+
+
   }
 
 }

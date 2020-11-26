@@ -1,4 +1,6 @@
+import { ArrayType } from '@angular/compiler';
 import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,8 @@ import { Component } from '@angular/core';
     ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'EpamTestAngular';
+
+
 }
