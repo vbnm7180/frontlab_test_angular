@@ -15,12 +15,12 @@ export class ListComponent implements OnInit {
   constructor(private uiserv: UserInfoService) { }
     
   processData() {
-      this.uiserv.getData().subscribe((data:any)=>{this.users=data});
+      this.uiserv.getData().subscribe((data:any)=>{this.users=data; });
     }
 
   ngOnInit(): void {
 
-
+console.log(this.users)
   }
 
 }
