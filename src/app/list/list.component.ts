@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { UserInfoService } from '../user-info.service';
 import { User } from './user';
 
@@ -12,11 +12,19 @@ export class ListComponent implements OnInit {
 
   users:User[];
 
-  constructor(private uiserv: UserInfoService) { }
+  constructor(private uiserv: UserInfoService,private renderer: Renderer2) { }
 
   showUsername(user:User){
     
     return user.name.title + " " + user.name.first + " " + user.name.last;
+
+  }
+
+  openPopup(e:MouseEvent){
+
+    var popup = (<HTMLElement>e.target).closest(".list__item").nextSibling;
+
+    this.renderer.setStyle(popup,'display','block');
 
   }
 
