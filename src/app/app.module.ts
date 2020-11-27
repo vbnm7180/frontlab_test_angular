@@ -11,7 +11,7 @@ import { UserInfoService } from './user-info.service';
   declarations: [
     AppComponent,
     HeaderComponent,
-    ListComponent
+    ListComponent,
   ],
   imports: [
     BrowserModule,
