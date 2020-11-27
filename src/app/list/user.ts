@@ -1,10 +1,9 @@
 export class User {
-
 	gender: string;
 	name: {
 		title: string;
 		first: string;
-		last: string;
+		last: string
 	};
 	location: {
 		street: string;
@@ -17,8 +16,6 @@ export class User {
 	picture: {
 		large: string;
 		medium: string;
-		thumbnail: string;
+		thumbnail: string
 	}
-
-	constructor(){}
 }

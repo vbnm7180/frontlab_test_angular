@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { User } from '../list/user';
 
 @Component({
   selector: 'app-popup',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopupComponent implements OnInit {
 
+  @Input() users:User[];
+  i:any;
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.i);
   }
 
 }

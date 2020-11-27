@@ -12,13 +12,23 @@ import { PopupComponent } from '../popup/popup.component'
 })
 export class ListComponent implements OnInit {
 
-  users: User[] = [];
+  users:User[];
 
   constructor(private uiserv: UserInfoService) { }
+
+  showUsername(user:User){
+    
+    return user.name.title + " " + user.name.first + " " + user.name.last;
+
+  }
+
+
 
 
 
   ngOnInit(): void {
+
+
 
     this.uiserv.getData().subscribe((data) => { this.users = data["results"]; });
 

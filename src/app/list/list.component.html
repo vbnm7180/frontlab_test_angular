@@ -1,11 +1,25 @@
 <div class="list">
     <div class="list__container">
-        <div class="list__block">
-            <div *ngFor="let user of users; let i=index" class="list__item">
-                <img class="item__image" src="">
-                <div class="item__name">{{user.name.title}}</div>
+        <div *ngFor="let user of users; let i=index" class="list__block">
+            <div class="list__item">
+                <img class="item__image" src="{{user.picture.medium}}">
+                <div class="item__name">{{showUsername(user)|uppercase}}</div>
             </div>
-            <app-popup></app-popup>
+            <div class="popup">
+                <div class="popup__header">
+                    <img src="images/cancel.svg" class="exit">
+                </div>
+                <div class="popup__content">
+                    <img src="" class="popup__image">
+                    <div class="popup__info">
+                        <div class="popup__street">STREET: {{user.location.street}}</div>
+                        <div class="popup__city">CITY: {{user.location.city}}</div>
+                        <div class="popup__state">STATE: {{user.location.state}}</div>
+                        <div class="popup__mail">EMAIL: {{user.email}}</div>
+                        <div class="popup__phone">PHONE: {{user.phone}}</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
