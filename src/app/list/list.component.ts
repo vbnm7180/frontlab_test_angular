@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserInfoService } from '../user-info.service';
 import { User } from './user';
-import { PopupComponent } from '../popup/popup.component'
-
 
 @Component({
   selector: 'app-list',
@@ -22,13 +20,7 @@ export class ListComponent implements OnInit {
 
   }
 
-
-
-
-
   ngOnInit(): void {
-
-
 
     this.uiserv.getData().subscribe((data) => { this.users = data["results"]; });
 

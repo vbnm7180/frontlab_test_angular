@@ -5,15 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ListComponent } from './list/list.component';
-import { PopupComponent } from './popup/popup.component';
 import { UserInfoService } from './user-info.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ListComponent,
-    PopupComponent
+    ListComponent
   ],
   imports: [
     BrowserModule,
