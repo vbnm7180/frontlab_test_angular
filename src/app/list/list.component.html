@@ -1,6 +1,6 @@
 <div class="list">
     <div class="list__container">
-        <div *ngFor="let user of users; let i=index" class="list__block">
+        <div *ngFor="let user of users" class="list__block">
             <div class="list__item">
                 <img class="item__image" src="{{user.picture.medium}}">
                 <div class="item__name">{{showUsername(user)|uppercase}}</div>
