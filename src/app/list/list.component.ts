@@ -28,6 +28,14 @@ export class ListComponent implements OnInit {
 
   }
 
+  closePopup(e:MouseEvent){
+
+    var popup = (<HTMLElement>e.target).closest(".popup");
+
+    this.renderer.setStyle(popup,'display','none');
+
+  }
+
   ngOnInit(): void {
 
     this.uiserv.getData().subscribe((data) => { this.users = data["results"]; });
