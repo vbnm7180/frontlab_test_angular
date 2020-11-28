@@ -1,3 +1,4 @@
+//Класс для получения данных с сервера
 export class User {
 	gender: string;
 	name: {

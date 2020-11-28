@@ -1,5 +1,5 @@
 import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,14 +8,20 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private renderer: Renderer2) { }
+  constructor() { }
 
+  //Кнопка сортировки
   filter() {
+    //Получаем объект типа NodeListOf, состоящий из элементов HTMLElement
     var nodeList: NodeListOf<HTMLElement> = document.querySelectorAll(".list__block");
+    //Преобразуем NodeListOf в массив Array из HTMLElement
     var arrayList: Array<HTMLElement> = Array.from(nodeList);
+    //Выбираем select
     var filterSelector: HTMLInputElement = document.querySelector(".sort__types");
+    //Получаем выбранное значение селекта
     var filterType:string = filterSelector.value;
 
+    //Если в select выбрана сортировка по алфавиту
     if (filterType == "1") {
       //Сортируем массив с .list__block по тексту в алфавитном порядке
       arrayList.sort(function (a, b) {
@@ -32,8 +38,10 @@ export class HeaderComponent implements OnInit {
       });
     }
 
+    //Удаляем все элемены списка
     document.querySelector(".list__container").innerHTML = "";
 
+    //Добавляем отсортированные элементы списка
     var item: HTMLElement;
     for (item of arrayList) {
       document.querySelector(".list__container").appendChild(item);
